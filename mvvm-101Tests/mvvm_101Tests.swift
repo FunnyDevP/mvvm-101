@@ -12,6 +12,7 @@ class mvvm_101Tests: XCTestCase {
 
     var apiManager: APIManager!
     var expectation: XCTestExpectation!
+    var expectationFailed: XCTestExpectation!
     let apiURL = URL(string: "http://localhost:8080")
     
     override func setUp() {
@@ -21,13 +22,15 @@ class mvvm_101Tests: XCTestCase {
         let session = URLSession(configuration: config)
         
         
-        expectation = expectation(description: "expectation")
+        expectation = expectation(description: "success")
         apiManager = APIManager(session: session)
         
         
     }
     
     override  func tearDown() {
+        expectation = nil
+        expectationFailed = nil
         apiManager = nil
     }
     
@@ -51,7 +54,6 @@ class mvvm_101Tests: XCTestCase {
         URLProtocolMock.testURLS[apiURL] = data
         URLProtocolMock.response = HTTPURLResponse(url: apiURL!, statusCode: 200, httpVersion: nil, headerFields: nil)
         
-        
         apiManager.fetchItems(url: apiURL!) { (resultCompletion: Result<[User], Error>) in
             switch resultCompletion {
             case .success(let users):
@@ -69,10 +71,25 @@ class mvvm_101Tests: XCTestCase {
             }
         }
         wait(for: [expectation], timeout: 1.0)
-        
-       
-        
     }
+    
+    func testNetworkFailure(){
+        URLProtocolMock.error = NSError(domain: "NSURLErrorDomain", code: -1004, userInfo: nil)
+        
+        apiManager.fetchItems(url: apiURL!) { (resultCompletion: Result<[User], Error>) in
+            switch resultCompletion {
+            case .failure(let error):
+                let nrErr = error as NSError
+                XCTAssertEqual(nrErr.code, NSURLErrorCannotConnectToHost)
+                self.expectation.fulfill()
+            case .success(_):
+                self.expectation.fulfill()
+            }
+        }
+        wait(for: [expectation], timeout: 1.0)
+    }
+    
+    
     override func setUpWithError() throws {
         
         // Put setup code here. This method is called before the invocation of each test method in the class.
