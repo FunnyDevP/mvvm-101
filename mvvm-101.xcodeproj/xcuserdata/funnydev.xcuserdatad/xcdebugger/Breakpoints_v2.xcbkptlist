@@ -52,5 +52,53 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6AA4CD1A-392E-4184-988D-A08DC567214A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "mvvm-101Tests/mvvm_101Tests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "testSuccessfulResponse()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6AA4CD1A-392E-4184-988D-A08DC567214A - 2a5a96794bdaa9b8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "mvvm_101Tests.mvvm_101Tests.testSuccessfulResponse() -&gt; ()"
+                  moduleName = "mvvm-101Tests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/funnydev/Documents/programming/mobile_dev/learn-swift/mvvm-101/mvvm-101Tests/mvvm_101Tests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "86"
+                  endingLineNumber = "86"
+                  offsetFromSymbolStart = "1069">
+               </Location>
+               <Location
+                  uuid = "6AA4CD1A-392E-4184-988D-A08DC567214A - 7078d53cf80f5e47"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Array&lt;mvvm_101.User&gt;, Swift.Error&gt;) -&gt; () in mvvm_101Tests.mvvm_101Tests.testSuccessfulResponse() -&gt; ()"
+                  moduleName = "mvvm-101Tests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/funnydev/Documents/programming/mobile_dev/learn-swift/mvvm-101/mvvm-101Tests/mvvm_101Tests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "163">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

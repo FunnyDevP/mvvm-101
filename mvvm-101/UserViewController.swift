@@ -52,8 +52,13 @@ class UserViewController: UITableViewController {
         cell.textLabel?.text = user.name
         return cell
     }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return users.count
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(users[indexPath.item])
     }
 
 

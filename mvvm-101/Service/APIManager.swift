@@ -9,13 +9,18 @@ import Foundation
 import Combine
 
 class APIManager {
+    var session: URLSession
     private var subscribers = Set<AnyCancellable>()
+    
+    init(session: URLSession = URLSession.shared) {
+        self.session = session
+    }
     
     func fetchItems<T: Decodable>(url: URL, completion: @escaping (Result<[T],Error>) -> Void) {
         var urlReq = URLRequest(url: url)
         urlReq.httpMethod = "GET"
         
-        URLSession.shared.dataTaskPublisher(for: urlReq)
+        self.session.dataTaskPublisher(for: urlReq)
             .map{$0.data}
             .decode(type: [T].self, decoder: JSONDecoder())
             .sink { resultCompletion in
@@ -28,9 +33,12 @@ class APIManager {
                 
                 completion(.success(items))
             }.store(in: &subscribers)
-
+        
+        
     }
 }
+
+
 
 enum Endpoint {
     case users
