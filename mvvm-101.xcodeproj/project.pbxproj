@@ -16,8 +16,9 @@
 		1B92AD4A265C06B7002BCB3D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B92AD49265C06B7002BCB3D /* User.swift */; };
 		1B92AD4C265C073F002BCB3D /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B92AD4B265C073F002BCB3D /* UserViewModel.swift */; };
 		1B92AD4F265C083E002BCB3D /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B92AD4E265C083E002BCB3D /* APIManager.swift */; };
-		1B92AD57265D85F2002BCB3D /* mvvm_101Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B92AD56265D85F2002BCB3D /* mvvm_101Tests.swift */; };
+		1B92AD57265D85F2002BCB3D /* APIManangerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B92AD56265D85F2002BCB3D /* APIManangerTests.swift */; };
 		1B92AD5F265D860D002BCB3D /* URLProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B92AD5E265D860D002BCB3D /* URLProtocolMock.swift */; };
+		1BB86FDC2660081F005215F4 /* UserViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB86FDB2660081F005215F4 /* UserViewModelTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,9 +44,10 @@
 		1B92AD4B265C073F002BCB3D /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		1B92AD4E265C083E002BCB3D /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		1B92AD54265D85F2002BCB3D /* mvvm-101Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mvvm-101Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1B92AD56265D85F2002BCB3D /* mvvm_101Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mvvm_101Tests.swift; sourceTree = "<group>"; };
+		1B92AD56265D85F2002BCB3D /* APIManangerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManangerTests.swift; sourceTree = "<group>"; };
 		1B92AD58265D85F2002BCB3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B92AD5E265D860D002BCB3D /* URLProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolMock.swift; sourceTree = "<group>"; };
+		1BB86FDB2660081F005215F4 /* UserViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModelTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,9 +138,10 @@
 		1B92AD55265D85F2002BCB3D /* mvvm-101Tests */ = {
 			isa = PBXGroup;
 			children = (
-				1B92AD56265D85F2002BCB3D /* mvvm_101Tests.swift */,
+				1B92AD56265D85F2002BCB3D /* APIManangerTests.swift */,
 				1B92AD58265D85F2002BCB3D /* Info.plist */,
 				1B92AD5E265D860D002BCB3D /* URLProtocolMock.swift */,
+				1BB86FDB2660081F005215F4 /* UserViewModelTest.swift */,
 			);
 			path = "mvvm-101Tests";
 			sourceTree = "<group>";
@@ -256,7 +259,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B92AD57265D85F2002BCB3D /* mvvm_101Tests.swift in Sources */,
+				1B92AD57265D85F2002BCB3D /* APIManangerTests.swift in Sources */,
+				1BB86FDC2660081F005215F4 /* UserViewModelTest.swift in Sources */,
 				1B92AD5F265D860D002BCB3D /* URLProtocolMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
