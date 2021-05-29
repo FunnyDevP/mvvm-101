@@ -22,35 +22,68 @@ class UserViewModelTest: XCTestCase {
         viewModel = nil
     }
     
-    func testsuccess(){
-        let exectation = XCTestExpectation(description: "test user view model")
-        var sub: AnyCancellable? = nil
+    func testFetchUsersIsSuccess(){
+        let expectation = XCTestExpectation(description: "test fetch users is success")
+        var cancellable: AnyCancellable? = nil
         
-        sub = viewModel.usersSubject.sink { completion in
-            exectation.fulfill()
+        cancellable = viewModel.usersSubject.sink { completion in
+            expectation.fulfill()
         } receiveValue: { users in
             XCTAssertEqual(1, users.count)
             XCTAssertEqual(1, users[0].id)
             XCTAssertEqual("Hello World", users[0].name)
-            exectation.fulfill()
+            expectation.fulfill()
         }
     
         viewModel.fetchUsers()
         XCTAssertEqual(1, apiManager.numberOfCalled)
         
-        wait(for: [exectation], timeout: 1.0)
+        wait(for: [expectation], timeout: 1.0)
+    }
+    
+    func testFetchUsersIsFailed() {
+        let expectation = XCTestExpectation(description: "test fetch users is failed")
+        var cancellable: AnyCancellable? = nil
+        
+        cancellable = viewModel.usersSubject.sink(receiveCompletion: { completion in
+            switch completion {
+            case .failure(let error):
+                let nrErr = error as NSError
+                XCTAssertEqual(nrErr.code, NSURLErrorCannotConnectToHost)
+            case .finished:
+                break
+            }
+            expectation.fulfill()
+        }, receiveValue: { users in
+            expectation.fulfill()
+        })
+        
+    
+        apiManager.isError.toggle()
+        viewModel.fetchUsers()
+        XCTAssertEqual(1, apiManager.numberOfCalled)
+        XCTAssertEqual(true, apiManager.isError)
+        
+        wait(for: [expectation], timeout: 1.0)
     }
 }
     
     extension UserViewModelTest {
         class StubApiManager: APIManager {
             var numberOfCalled = 0
+            var isError = false
             override func fetchItems<T>(url: URL, completion: @escaping (Result<[T], Error>) -> Void) where T : Decodable {
-                let users = [
-                    User(id: 1, name: "Hello World")
-                ]
+
+                if !isError {
+                    let users = [
+                        User(id: 1, name: "Hello World")
+                    ]
+                    
+                    completion(.success(users as! [T]))
+                }else {
+                    completion(.failure(NSError(domain: "NSURLErrorDomain", code: -1004, userInfo: nil)))
+                }
                 numberOfCalled += 1
-                completion(.success(users as! [T]))
             }
         }
     }
