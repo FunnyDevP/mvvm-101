@@ -43,12 +43,15 @@ class APIManager {
 enum Endpoint {
     case users
     case test
+    case userComment(userID: String)
     var urlString: String {
         switch self {
         case .users:
             return "https://jsonplaceholder.typicode.com/users"
         case .test:
             return "http://localhost:8080"
+        case .userComment(let userID):
+            return "https://jsonplaceholder.typicode.com/posts?userId=\(userID)"
         }
     }
 }
