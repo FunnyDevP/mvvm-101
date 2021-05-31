@@ -67,7 +67,7 @@ class mvvm_101Tests: XCTestCase {
     }
     
     func testGetComments_GetCommentSuccess() {
-        let expectation = XCTestExpectation(description: "get users success")
+        let expectation = XCTestExpectation(description: "get comment success")
         let jsonString = #"""
             [
                 {

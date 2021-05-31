@@ -34,7 +34,7 @@ class UserViewModelTest: XCTestCase {
             XCTAssertEqual("Hello World", users[0].name)
             expectation.fulfill()
         }
-    
+        
         viewModel.fetchUsers()
         XCTAssertEqual(1, apiManager.numberOfCalled)
         
@@ -58,7 +58,7 @@ class UserViewModelTest: XCTestCase {
             expectation.fulfill()
         })
         
-    
+        
         apiManager.isError.toggle()
         viewModel.fetchUsers()
         XCTAssertEqual(1, apiManager.numberOfCalled)
@@ -67,23 +67,23 @@ class UserViewModelTest: XCTestCase {
         wait(for: [expectation], timeout: 1.0)
     }
 }
-    
-    extension UserViewModelTest {
-        class StubApiManager: APIManager {
-            var numberOfCalled = 0
-            var isError = false
-            override func fetchItems<T>(url: URL, completion: @escaping (Result<[T], Error>) -> Void) where T : Decodable {
 
-                if !isError {
-                    let users = [
-                        User(id: 1, name: "Hello World")
-                    ]
-                    
-                    completion(.success(users as! [T]))
-                }else {
-                    completion(.failure(NSError(domain: "NSURLErrorDomain", code: -1004, userInfo: nil)))
-                }
-                numberOfCalled += 1
+extension UserViewModelTest {
+    class StubApiManager: APIManager {
+        var numberOfCalled = 0
+        var isError = false
+        override func fetchItems<T>(url: URL, completion: @escaping (Result<[T], Error>) -> Void) where T : Decodable {
+            
+            if !isError {
+                let users = [
+                    User(id: 1, name: "Hello World")
+                ]
+                
+                completion(.success(users as! [T]))
+            }else {
+                completion(.failure(NSError(domain: "NSURLErrorDomain", code: -1004, userInfo: nil)))
             }
+            numberOfCalled += 1
         }
     }
+}

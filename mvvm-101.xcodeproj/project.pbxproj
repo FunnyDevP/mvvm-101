@@ -19,6 +19,8 @@
 		1B92AD57265D85F2002BCB3D /* APIManangerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B92AD56265D85F2002BCB3D /* APIManangerTests.swift */; };
 		1B92AD5F265D860D002BCB3D /* URLProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B92AD5E265D860D002BCB3D /* URLProtocolMock.swift */; };
 		1BB86FDC2660081F005215F4 /* UserViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB86FDB2660081F005215F4 /* UserViewModelTest.swift */; };
+		1BB86FE326654CB0005215F4 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB86FE226654CB0005215F4 /* CommentViewController.swift */; };
+		1BB86FE926654FE4005215F4 /* CommentViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB86FE826654FE4005215F4 /* CommentViewModelTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		1B92AD58265D85F2002BCB3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B92AD5E265D860D002BCB3D /* URLProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolMock.swift; sourceTree = "<group>"; };
 		1BB86FDB2660081F005215F4 /* UserViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModelTest.swift; sourceTree = "<group>"; };
+		1BB86FE226654CB0005215F4 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
+		1BB86FE826654FE4005215F4 /* CommentViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewModelTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,7 @@
 		1B92AD45265C0661002BCB3D /* User */ = {
 			isa = PBXGroup;
 			children = (
+				1BB86FE126654C98005215F4 /* View */,
 				1B92AD47265C0691002BCB3D /* ViewModel */,
 				1B92AD46265C066E002BCB3D /* Model */,
 			);
@@ -142,8 +147,17 @@
 				1B92AD58265D85F2002BCB3D /* Info.plist */,
 				1B92AD5E265D860D002BCB3D /* URLProtocolMock.swift */,
 				1BB86FDB2660081F005215F4 /* UserViewModelTest.swift */,
+				1BB86FE826654FE4005215F4 /* CommentViewModelTest.swift */,
 			);
 			path = "mvvm-101Tests";
+			sourceTree = "<group>";
+		};
+		1BB86FE126654C98005215F4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1BB86FE226654CB0005215F4 /* CommentViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,6 +263,7 @@
 				1B92AD4F265C083E002BCB3D /* APIManager.swift in Sources */,
 				1B92AD4A265C06B7002BCB3D /* User.swift in Sources */,
 				1B92AD35265C0590002BCB3D /* UserViewController.swift in Sources */,
+				1BB86FE326654CB0005215F4 /* CommentViewController.swift in Sources */,
 				1B92AD31265C0590002BCB3D /* AppDelegate.swift in Sources */,
 				1B92AD4C265C073F002BCB3D /* UserViewModel.swift in Sources */,
 				1B92AD33265C0590002BCB3D /* SceneDelegate.swift in Sources */,
@@ -259,6 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BB86FE926654FE4005215F4 /* CommentViewModelTest.swift in Sources */,
 				1B92AD57265D85F2002BCB3D /* APIManangerTests.swift in Sources */,
 				1BB86FDC2660081F005215F4 /* UserViewModelTest.swift in Sources */,
 				1B92AD5F265D860D002BCB3D /* URLProtocolMock.swift in Sources */,

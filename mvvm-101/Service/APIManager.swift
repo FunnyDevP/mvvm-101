@@ -30,11 +30,8 @@ class APIManager {
                 case .finished: break
                 }
             } receiveValue: { items in
-                
                 completion(.success(items))
             }.store(in: &subscribers)
-        
-        
     }
 }
 
