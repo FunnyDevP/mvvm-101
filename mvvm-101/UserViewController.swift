@@ -9,12 +9,11 @@ import UIKit
 import Combine
 
 class UserViewController: UITableViewController {
-
+    
     var viewModel: UserViewModel!
     var users: [User] = []
     private let apiManager = APIManager()
     private var subscribers: AnyCancellable?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViewModel()
@@ -58,9 +57,16 @@ class UserViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(users[indexPath.item])
+        performSegue(withIdentifier: "userSegue", sender: self)
     }
-
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "userSegue" {
+            let controller = segue.destination as! CommentTableViewController
+            if let index = tableView.indexPathForSelectedRow?.row {
+                controller.userID = users[index].id
+            }
+        }
+    }
 }
 

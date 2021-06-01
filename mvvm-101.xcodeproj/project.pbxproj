@@ -21,6 +21,7 @@
 		1BB86FDC2660081F005215F4 /* UserViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB86FDB2660081F005215F4 /* UserViewModelTest.swift */; };
 		1BB86FE326654CB0005215F4 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB86FE226654CB0005215F4 /* CommentViewController.swift */; };
 		1BB86FE926654FE4005215F4 /* CommentViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB86FE826654FE4005215F4 /* CommentViewModelTest.swift */; };
+		1BB86FEB26655BBE005215F4 /* CommentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB86FEA26655BBE005215F4 /* CommentTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		1BB86FDB2660081F005215F4 /* UserViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModelTest.swift; sourceTree = "<group>"; };
 		1BB86FE226654CB0005215F4 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		1BB86FE826654FE4005215F4 /* CommentViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewModelTest.swift; sourceTree = "<group>"; };
+		1BB86FEA26655BBE005215F4 /* CommentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 		1B92AD47265C0691002BCB3D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				1BB86FE226654CB0005215F4 /* CommentViewController.swift */,
 				1B92AD4B265C073F002BCB3D /* UserViewModel.swift */,
 			);
 			path = ViewModel;
@@ -155,7 +158,7 @@
 		1BB86FE126654C98005215F4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1BB86FE226654CB0005215F4 /* CommentViewController.swift */,
+				1BB86FEA26655BBE005215F4 /* CommentTableViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 			files = (
 				1B92AD4F265C083E002BCB3D /* APIManager.swift in Sources */,
 				1B92AD4A265C06B7002BCB3D /* User.swift in Sources */,
+				1BB86FEB26655BBE005215F4 /* CommentTableViewController.swift in Sources */,
 				1B92AD35265C0590002BCB3D /* UserViewController.swift in Sources */,
 				1BB86FE326654CB0005215F4 /* CommentViewController.swift in Sources */,
 				1B92AD31265C0590002BCB3D /* AppDelegate.swift in Sources */,
